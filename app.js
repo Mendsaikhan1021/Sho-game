@@ -7,12 +7,19 @@ var roundScores = 0;
 /* Шооны аль талаараа буусныг хадгалах хувьсагч хэрэгтэй 1-6 талтай   */
 var dice = Math.floor(Math.random() * 6 ) +1 ;
 // Програм эхлэхэд оноо 0 байх 
-window.document.querySelector("#score-0").textContent = 0;
-window.document.querySelector("#score-1").textContent = 0;
+document.getElementById("score-0").textContent = 0;
+document.getElementById("score-1").textContent = 0;
+document.getElementById("current-0").textContent = 0;
+document.getElementById("current-1").textContent = 0;
 
-window.document.querySelector("#current-0").textContent = 0;
-window.document.querySelector("#current-1").textContent = 0;
-
-document.querySelector(".dice").style.display = "none";         // дэлгэц дээр сss ээс дуудагдах зургыг харуулахгүй 
-console.log("Шоо: " + dice);
-/*  */
+// дэлгэц дээр сss ээс дуудагдах зургыг харуулахгүй
+var diceDom =  document.querySelector(".dice");
+diceDom.style.display = "none";  
+        
+ /*btn-roll дарахад Shooshid -ийг callBack хийж дуудах
+    function() нь anonymous функц нэг удаа ажиллах нөхцөлд үүсгэвэл тохиромжтой*/
+ document.querySelector(".btn-roll").addEventListener("click" , function() { 
+    var diceNumber = Math.floor(Math.random() * 6 ) +1 ;
+  diceDom.style.display = "block";
+  document.querySelector(".dice").src = "dice-" + diceNumber + ".png";
+ });      
