@@ -44,7 +44,7 @@ diceDom.style.display = "none";
 /*btn-roll дарахад Shooshid -ийг callBack хийж дуудах
     function() нь anonymous функц нэг удаа ажиллах нөхцөлд үүсгэвэл тохиромжтой*/
 document.querySelector(".btn-roll").addEventListener("click", function() {
- if(isNewGAme )
+ if(isNewGAme  )
  {
     var diceNumber = Math.floor(Math.random() * 6) + 1;
     diceDom.style.display = "block";
@@ -81,7 +81,7 @@ document
         // Дэлгэц дээр оноог шилжүүлэх
         document.getElementById("score-" + activePlayer).textContent =
           scores[activePlayer];
-        if (scores[activePlayer] >= 10) {
+        if (scores[activePlayer] >= 30) {
             isNewGAme = false;
           document.getElementById("name-" + activePlayer).textContent =
             "Ялагч боллоо";
